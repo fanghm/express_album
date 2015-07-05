@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	</head>
+	<body>
+		<h1>Photo Album</h1>
+		<p>Powered by Express</p>
+		<div id="photos">
+			<% photos.forEach(function(photo) { %>
+				<div class="photo">
+					<h2><%= photo.name %></h2>
+					<img src='/photos/<%= photo.path %>'>
+				</div>
+			<% }) %>
+		</div>
+	</body>
+</html>
