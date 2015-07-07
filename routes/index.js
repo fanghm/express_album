@@ -10,6 +10,8 @@ var photos = require('./photos');
 router.get('/', photos.list);
 router.get('/upload', photos.form);
 
-router.post('/upload', photos.submit(require('path').join(__dirname, '../public/photos')));
+var path = require('path').join(__dirname, '../public/photos');
+router.get('/photo/:id/download', photos.download(path))
+router.post('/upload', photos.submit(path));
 
 module.exports = router;
